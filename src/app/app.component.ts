@@ -80,9 +80,9 @@ export class AppComponent {
     this.getHeroes();
   }
 
-  getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
-  }
+ getHeroes(): void {
+  this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+}
 
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
